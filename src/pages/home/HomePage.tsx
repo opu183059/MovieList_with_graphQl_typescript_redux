@@ -1,13 +1,10 @@
-import { useQuery } from "@apollo/client";
-import { GET_CHARACTER } from "../../graphQl/queries/Query";
 import Banner from "./banner/Banner";
+import Episodes from "./episodes/Episodes";
 const HomePage = () => {
-  const { data } = useQuery(GET_CHARACTER);
-
-  console.log(data);
   return (
     <>
       <Banner></Banner>
+      <Episodes></Episodes>
     </>
   );
 };
