@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-
+import { BsFacebook, BsLinkedin } from "react-icons/bs";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { AiFillTwitterCircle, AiFillBehanceCircle } from "react-icons/ai";
 const Footer = () => {
   return (
     <footer className="relative bg-blueGray-200 pt-8 pb-6">
@@ -12,31 +13,22 @@ const Footer = () => {
             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
               Find us on any of these platforms, we respond 1-2 business days.
             </h5>
-            <div className="mt-6 lg:mb-0 mb-6">
-              <button
-                className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i className="fab fa-twitter"></i>
-              </button>
-              <button
-                className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i className="fab fa-facebook-square"></i>
-              </button>
-              <button
-                className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i className="fab fa-dribbble"></i>
-              </button>
-              <button
-                className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                type="button"
-              >
-                <i className="fab fa-github"></i>
-              </button>
+            <div className="flex gap-3">
+              <a href="#">
+                <BsFacebook size={25}></BsFacebook>
+              </a>
+              <a href="#">
+                <IoLogoWhatsapp size={25}></IoLogoWhatsapp>
+              </a>
+              <a href="#">
+                <AiFillTwitterCircle size={25}></AiFillTwitterCircle>
+              </a>
+              <a href="#">
+                <AiFillBehanceCircle size={25}></AiFillBehanceCircle>
+              </a>
+              <a href="#">
+                <BsLinkedin size={25}></BsLinkedin>
+              </a>
             </div>
           </div>
           <div className="w-full lg:w-6/12 px-4">
@@ -126,14 +118,7 @@ const Footer = () => {
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-blueGray-500 font-semibold py-1">
-              <p>
-                {" "}
-                Copyright © 2023{" "}
-                <Link to={"/"} className="hover:text-blue-600">
-                  Rick and Morty
-                </Link>{" "}
-                .
-              </p>
+              <p>Copyright © 2023 Rick and Morty.</p>
             </div>
           </div>
         </div>
