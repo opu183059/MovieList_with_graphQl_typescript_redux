@@ -1,13 +1,15 @@
-import { BsBookmarkHeartFill, BsBookmarkPlus } from "react-icons/bs";
-import { addBookmark } from "../../../redux/features/slices/BookMarkSlice";
-import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import {
+  addBookmark,
+  removeBookmark,
+} from "../../../redux/features/slices/BookMarkSlice";
+import { useAppDispatch } from "../../../redux/hooks";
 import { useState } from "react";
 
 const EpisodeCard = ({ episodeData }) => {
   const dispatch = useAppDispatch();
   const [bookMark, setBookMark] = useState<boolean>(true);
   const { id, name, air_date, episode, characters } = episodeData;
-  const image = characters[5]?.image;
+  const image = characters[8]?.image;
   // const image =
   //   characters[Math.round(Math.random() * (characters.length - 1))]?.image;
   const EpisodeInformation = {
@@ -16,19 +18,18 @@ const EpisodeCard = ({ episodeData }) => {
     air_date,
     episode,
     characters,
+    status: "watchlist",
   };
-
-  const BookMarkedData = useAppSelector(
-    (state) => state.bookMarkSlice.episodes
-  );
-
   const add = () => {
-    dispatch(addBookmark(EpisodeInformation));
+    if (bookMark) {
+      dispatch(addBookmark(EpisodeInformation));
+    } else {
+      dispatch(removeBookmark(id));
+    }
     setBookMark(!bookMark);
   };
-  console.log(BookMarkedData);
   return (
-    <div className="group h-96 [perspective:1000px] hover:-translate-y-3 duration-300">
+    <div className="group h-96 [perspective:1000px] hover:-translate-y-2 duration-300">
       <div className="relative h-full w-full rounded-xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         <div className="absolute inset-0">
           <img

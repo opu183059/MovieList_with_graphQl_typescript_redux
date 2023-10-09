@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../redux/hooks";
 
 const Navbar = () => {
+  const BookMarkedData = useAppSelector(
+    (state) => state.bookMarkSlice.episodes
+  );
   return (
     <nav className="w-full shadow-sm py-1 backdrop-blur-md bg-white/40 fixed z-50">
       {/* todo -> add fixed in the navbar  */}
@@ -20,8 +24,16 @@ const Navbar = () => {
           <Link to={"/about"} className="px-2 mx-1 hover:text-[#472c26]">
             About
           </Link>
-          <Link to={"/cart"} className="px-2 mx-1 hover:text-[#472c26]">
-            Cart
+          <Link
+            to={"/watchlist"}
+            className="relative px-2 mx-1 hover:text-[#472c26]"
+          >
+            Watchlist
+            {BookMarkedData.length > 0 && (
+              <span className="absolute text-xs bg-red-600 text-white font-thin px-1 rounded-full">
+                {BookMarkedData.length}
+              </span>
+            )}
           </Link>
         </div>
       </div>

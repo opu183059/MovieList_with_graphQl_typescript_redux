@@ -51,7 +51,7 @@ const Banner = () => {
             <div className="flex gap-3 items-center sm:justify-center mt-4">
               <a
                 href="#"
-                className="bg-transparent bg-[#945748] hover:bg-transparent hover:text-[#a05f4f] text-[#f7eeec] shadow hover:shadow-lg border border-[#a05f4f] px-3 py-2 rounded-md duration-300"
+                className="bg-transparent bg-[#a05f4f] hover:bg-transparent hover:text-[#a05f4f] text-[#f7eeec] shadow hover:shadow-lg border border-[#a05f4f] px-3 py-2 rounded-md duration-300"
               >
                 Explore
               </a>

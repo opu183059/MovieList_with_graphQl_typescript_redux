@@ -6,6 +6,7 @@ interface episode {
     air_date: string
     episode: string
     characters: string
+    status: string
 }
 
 interface todoList {
@@ -27,14 +28,22 @@ export const BookMarkSlice = createSlice({
                 air_date: action.payload.air_date,
                 episode: action.payload.episode,
                 characters: action.payload.characters,
+                status: action.payload.status,
             }
             state.episodes.push(episodeData)
         },
         removeBookmark: (state, action) => {
             state.episodes = state.episodes.filter((todo) => (todo.id != action.payload))
+        },
+        changeEpisodeStatus: (state, action) => {
+            const { id, status } = action.payload;
+            const episodeToChange = state.episodes.find(episode => episode.id === id);
+            if (episodeToChange) {
+                episodeToChange.status = status;
+            }
         }
     }
 })
 
-export const { addBookmark, removeBookmark } = BookMarkSlice.actions
+export const { addBookmark, removeBookmark, changeEpisodeStatus } = BookMarkSlice.actions
 export default BookMarkSlice.reducer

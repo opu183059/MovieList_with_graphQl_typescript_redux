@@ -1,11 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterSlice from './features/slices/counterSlice'
 import BookMarkSlice from './features/slices/BookMarkSlice'
 // ...
 
 export const store = configureStore({
     reducer: {
-        counterSlice: counterSlice,
         bookMarkSlice: BookMarkSlice
     },
 })
