@@ -14,18 +14,13 @@ const WatchListRowCard = ({ item }) => {
     );
   };
 
-  let makeStatus;
-  if (item.status == "watchlist") {
-    makeStatus = "watching";
-  }
-
   return (
     <div
       className={`${
         item.status == "watchlist"
           ? "bg-purple-100"
           : item.status == "watching"
-          ? "bg-yellow-100"
+          ? "bg-blue-100"
           : "bg-green-100"
       } my-2 p-2 rounded-md flex items-center justify-between h-20`}
     >

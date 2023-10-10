@@ -8,13 +8,17 @@ interface episode {
     status: string
 }
 
-interface todoList {
+interface episodeList {
     episodes: episode[]
 }
 
-const initialState: todoList = {
-    episodes: []
+let storedWatchlist = [];
+storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
+
+const initialState: episodeList = {
+    episodes: storedWatchlist
 }
+
 
 export const BookMarkSlice = createSlice({
     name: "todo",
@@ -32,7 +36,7 @@ export const BookMarkSlice = createSlice({
             localStorage.setItem("Watchlist", JSON.stringify(state.episodes));
         },
         removeBookmark: (state, action) => {
-            state.episodes = state.episodes.filter((todo) => (todo.id != action.payload))
+            state.episodes = state.episodes.filter((episodeData) => (episodeData.id != action.payload))
             localStorage.setItem("Watchlist", JSON.stringify(state.episodes));
         },
         changeEpisodeStatus: (state, action) => {

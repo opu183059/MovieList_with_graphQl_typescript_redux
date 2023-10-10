@@ -7,8 +7,7 @@ const Navbar = () => {
   );
   return (
     <nav className="w-full shadow-sm py-1 backdrop-blur-md bg-white/40 fixed z-50">
-      {/* todo -> add fixed in the navbar  */}
-      <div className="max-w-6xl mx-auto flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-5 flex justify-between items-center">
         <Link to={"/"} className="flex items-center gap-1">
           <img
             src="https://cdn-icons-png.flaticon.com/512/4615/4615731.png"
@@ -29,7 +28,7 @@ const Navbar = () => {
             className="relative px-2 mx-1 hover:text-[#472c26]"
           >
             Watchlist
-            {BookMarkedData.length > 0 && (
+            {BookMarkedData && BookMarkedData?.length > 0 && (
               <span className="absolute text-xs bg-red-600 text-white font-thin px-1 rounded-full">
                 {BookMarkedData.length}
               </span>

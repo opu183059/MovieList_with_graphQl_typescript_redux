@@ -4,7 +4,7 @@ import {
   removeBookmark,
 } from "../../../redux/features/slices/BookMarkSlice";
 import { useAppDispatch } from "../../../redux/hooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const EpisodeCard = ({ episodeData }) => {
   const dispatch = useAppDispatch();
@@ -20,20 +20,24 @@ const EpisodeCard = ({ episodeData }) => {
     episode,
     status: "watchlist",
   };
+  let storedWatchlist = {};
+  storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
+  const available = storedWatchlist?.find(
+    (episodeData) => episodeData.id == id
+  );
+  useEffect(() => {
+    setBookMark(available ? false : true);
+  }, [bookMark]);
 
   const add = () => {
-    let storedWatchlist = {};
-    storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
-    const available = storedWatchlist?.find(
-      (episodeData) => episodeData.id == id
-    );
-
     if (!available) {
       dispatch(addBookmark(EpisodeInformation));
       toast.success("Added in the Watchlist");
+      setBookMark(false);
     } else {
       dispatch(removeBookmark(id));
       toast.error("Removed From Watchlist");
+      setBookMark(true);
     }
     setBookMark(!bookMark);
   };

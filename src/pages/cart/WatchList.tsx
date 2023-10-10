@@ -29,9 +29,9 @@ const WatchList = () => {
   });
 
   return (
-    <div className="pt-10 min-h-screen">
+    <div className="pt-10 min-h-screen px-5">
       <div className="max-w-6xl mx-auto">
-        <div className="grid gap-2 grid-cols-3 mt-5">
+        <div className="grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-5">
           <div className="">
             <p className="text-center p-2 border-2 border-black rounded">
               Watch List

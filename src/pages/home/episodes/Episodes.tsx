@@ -9,7 +9,7 @@ const Episodes = () => {
     return <h1>Data is not available right now</h1>;
   }
   return (
-    <section className="pt-20 min-h-screen max-w-6xl mx-auto">
+    <section className="pt-20 min-h-screen max-w-6xl mx-auto px-5">
       <h2 className="mb-5 text-3xl font-bold text-gray-900 sm:text-4xl text-center">
         All the episodes are here
       </h2>
