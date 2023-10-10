@@ -6,17 +6,22 @@ interface episode {
     air_date: string
     episode: string
     status: string
+    characters: string
 }
 
 interface episodeList {
     episodes: episode[]
 }
 
-let storedWatchlist = [];
-storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
+let episodesList = [];
+// storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
+const storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
 
+if (storedWatchlist) {
+    episodesList = storedWatchlist
+}
 const initialState: episodeList = {
-    episodes: storedWatchlist
+    episodes: episodesList
 }
 
 
@@ -31,6 +36,7 @@ export const BookMarkSlice = createSlice({
                 air_date: action.payload.air_date,
                 episode: action.payload.episode,
                 status: action.payload.status,
+                characters: action.payload.characters,
             }
             state.episodes.push(episodeData)
             localStorage.setItem("Watchlist", JSON.stringify(state.episodes));

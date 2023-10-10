@@ -11,13 +11,13 @@ const EpisodeCard = ({ episodeData }) => {
   const [bookMark, setBookMark] = useState<boolean>(true);
   const { id, name, air_date, episode, characters } = episodeData;
   const image = characters[8]?.image;
-  // const image =
-  //   characters[Math.round(Math.random() * (characters.length - 1))]?.image;
+
   const EpisodeInformation = {
     id,
     name,
     air_date,
     episode,
+    characters,
     status: "watchlist",
   };
   let storedWatchlist = {};
@@ -42,7 +42,7 @@ const EpisodeCard = ({ episodeData }) => {
     setBookMark(!bookMark);
   };
   return (
-    <div className="group h-96 [perspective:1000px] hover:-translate-y-2 duration-300">
+    <div className="group h-96 [perspective:1000px]">
       <div className="relative h-full w-full rounded-xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         <div className="absolute inset-0">
           <img
@@ -50,9 +50,10 @@ const EpisodeCard = ({ episodeData }) => {
             src={image}
             alt={name + "image"}
           />
-          <h3 className="absolute bottom-0 rounded-b-xl group-hover:hidden w-full bg-white/80 text-xl font-bold text-center px-10 duration-300">
-            {episode}
-          </h3>
+          <div className="absolute bottom-0 rounded-b-xl group-hover:hidden w-full bg-white/90 font-bold text-center py-2 duration-500">
+            <h5 className=" text-xl">{episode}</h5>
+            <h5>{name}</h5>
+          </div>
         </div>
         <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
           <div className="flex min-h-full flex-col items-center justify-center">

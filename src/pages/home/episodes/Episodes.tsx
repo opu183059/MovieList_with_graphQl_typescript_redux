@@ -10,7 +10,7 @@ const Episodes = () => {
   }
   return (
     <section className="pt-20 min-h-screen max-w-6xl mx-auto px-5">
-      <h2 className="mb-5 text-3xl font-bold text-gray-900 sm:text-4xl text-center">
+      <h2 className="mb-10 font-poppins font-semibold text-[#5d2a1d] text-xl md:text-3xl text-center">
         All the episodes are here
       </h2>
       {loading && (
