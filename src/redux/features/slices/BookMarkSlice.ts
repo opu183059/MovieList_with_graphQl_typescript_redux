@@ -5,7 +5,6 @@ interface episode {
     name: string
     air_date: string
     episode: string
-    characters: string
     status: string
 }
 
@@ -27,13 +26,14 @@ export const BookMarkSlice = createSlice({
                 name: action.payload.name,
                 air_date: action.payload.air_date,
                 episode: action.payload.episode,
-                characters: action.payload.characters,
                 status: action.payload.status,
             }
             state.episodes.push(episodeData)
+            localStorage.setItem("Watchlist", JSON.stringify(state.episodes));
         },
         removeBookmark: (state, action) => {
             state.episodes = state.episodes.filter((todo) => (todo.id != action.payload))
+            localStorage.setItem("Watchlist", JSON.stringify(state.episodes));
         },
         changeEpisodeStatus: (state, action) => {
             const { id, status } = action.payload;
@@ -41,6 +41,7 @@ export const BookMarkSlice = createSlice({
             if (episodeToChange) {
                 episodeToChange.status = status;
             }
+            localStorage.setItem("Watchlist", JSON.stringify(state.episodes));
         }
     }
 })

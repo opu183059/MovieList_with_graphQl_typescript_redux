@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import {
   addBookmark,
   removeBookmark,
@@ -17,14 +18,22 @@ const EpisodeCard = ({ episodeData }) => {
     name,
     air_date,
     episode,
-    characters,
     status: "watchlist",
   };
+
   const add = () => {
-    if (bookMark) {
+    let storedWatchlist = {};
+    storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
+    const available = storedWatchlist?.find(
+      (episodeData) => episodeData.id == id
+    );
+
+    if (!available) {
       dispatch(addBookmark(EpisodeInformation));
+      toast.success("Added in the Watchlist");
     } else {
       dispatch(removeBookmark(id));
+      toast.error("Removed From Watchlist");
     }
     setBookMark(!bookMark);
   };

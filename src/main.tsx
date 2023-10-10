@@ -10,6 +10,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import WatchList from "./pages/cart/WatchList";
+import ErrorPage from "./pages/errorPage/ErrorPage";
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql/",
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
