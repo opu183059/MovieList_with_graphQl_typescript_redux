@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useAppSelector } from "../../redux/hooks";
-
 import WatchListRowCard from "./WatchListRowCard";
 import { Link } from "react-router-dom";
+import { singleWatchList } from "../../interface/interface";
+
 const WatchList = () => {
   useEffect(() => {
     scrollTo(0, 0);
@@ -39,7 +40,10 @@ const WatchList = () => {
                 Watch List ({wathlistArray.length})
               </p>
               {wathlistArray.map((item) => (
-                <WatchListRowCard key={item.id} item={item}></WatchListRowCard>
+                <WatchListRowCard
+                  key={item.id}
+                  item={item as singleWatchList}
+                ></WatchListRowCard>
               ))}
             </div>
             <div>
@@ -47,7 +51,10 @@ const WatchList = () => {
                 Watching ({watchingArray.length})
               </p>
               {watchingArray.map((item) => (
-                <WatchListRowCard key={item.id} item={item}></WatchListRowCard>
+                <WatchListRowCard
+                  key={item.id}
+                  item={item as singleWatchList}
+                ></WatchListRowCard>
               ))}
             </div>
             <div>
@@ -55,7 +62,10 @@ const WatchList = () => {
                 Watched ({watchedArray.length})
               </p>
               {watchedArray.map((item) => (
-                <WatchListRowCard key={item.id} item={item}></WatchListRowCard>
+                <WatchListRowCard
+                  key={item.id}
+                  item={item as singleWatchList}
+                ></WatchListRowCard>
               ))}
             </div>
           </div>

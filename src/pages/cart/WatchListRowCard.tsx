@@ -6,11 +6,16 @@ import {
 import { useAppDispatch } from "../../redux/hooks";
 import toast from "react-hot-toast";
 import { BsFillTrash3Fill } from "react-icons/bs";
+import { singleWatchList } from "../../interface/interface";
 
-const WatchListRowCard = ({ item }) => {
+interface watchListRowCardProps {
+  item: singleWatchList;
+}
+
+const WatchListRowCard = ({ item }: watchListRowCardProps) => {
   const dispatch = useAppDispatch();
 
-  const handleWatch = (episodeID, status) => {
+  const handleWatch = (episodeID: number, status: string) => {
     dispatch(
       changeEpisodeStatus({
         id: episodeID,
@@ -19,7 +24,7 @@ const WatchListRowCard = ({ item }) => {
     );
   };
 
-  const remove = (id) => {
+  const remove = (id: number) => {
     dispatch(removeBookmark(id));
     toast.error("Removed From Watchlist");
   };

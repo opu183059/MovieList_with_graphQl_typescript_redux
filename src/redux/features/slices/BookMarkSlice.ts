@@ -1,21 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { singleWatchList } from "../../../interface/interface";
 
-interface episode {
-    id: number
-    name: string
-    air_date: string
-    episode: string
-    status: string
-    characters: string
-}
+// interface episode {
+//     id: number
+//     name: string
+//     air_date: string
+//     episode: string
+//     status: string
+//     characters: string
+// }
 
 interface episodeList {
-    episodes: episode[]
+    episodes: singleWatchList[]
 }
 
 let episodesList = [];
-// storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
-const storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
+const stored = localStorage.getItem("Watchlist");
+const storedWatchlist = JSON.parse(stored!)
+// const storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
 
 if (storedWatchlist) {
     episodesList = storedWatchlist

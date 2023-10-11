@@ -5,8 +5,13 @@ import {
 } from "../../../redux/features/slices/BookMarkSlice";
 import { useAppDispatch } from "../../../redux/hooks";
 import { useEffect, useState } from "react";
+import { Episode } from "../../../graphQl/__generated__/graphql";
 
-const EpisodeCard = ({ episodeData }) => {
+interface epidoeCardProps {
+  episodeData: Episode;
+}
+
+const EpisodeCard = ({ episodeData }: epidoeCardProps) => {
   const dispatch = useAppDispatch();
   const [bookMark, setBookMark] = useState<boolean>(true);
   const { id, name, air_date, episode, characters } = episodeData;
@@ -20,11 +25,13 @@ const EpisodeCard = ({ episodeData }) => {
     characters,
     status: "watchlist",
   };
-  let storedWatchlist = {};
-  storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
-  const available = storedWatchlist?.find(
-    (episodeData) => episodeData.id == id
+  let storedWatchlist = [];
+  const ab = localStorage.getItem("Watchlist");
+  storedWatchlist = JSON.parse(ab!);
+  const available = storedWatchlist.find(
+    (episodeData: Episode) => episodeData.id == id
   );
+
   useEffect(() => {
     setBookMark(available ? false : true);
   }, [bookMark]);
@@ -47,7 +54,7 @@ const EpisodeCard = ({ episodeData }) => {
         <div className="absolute inset-0">
           <img
             className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/20"
-            src={image}
+            src={image!}
             alt={name + "image"}
           />
           <div className="absolute bottom-0 rounded-b-xl group-hover:hidden w-full bg-white/90 font-bold text-center py-2 duration-500">

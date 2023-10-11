@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "../__generated__";
 
 export const GET_CHARACTER = gql(`
 query getEpisodes{

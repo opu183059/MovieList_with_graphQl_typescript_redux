@@ -2,9 +2,13 @@ import { useQuery } from "@apollo/client";
 import { GET_CHARACTER } from "../../../graphQl/queries/Query";
 import Loading from "../../../components/Loading";
 import EpisodeCard from "./EpisodeCard";
+import {
+  Episode,
+  GetEpisodesQuery,
+} from "../../../graphQl/__generated__/graphql";
 
 const Episodes = () => {
-  const { loading, error, data } = useQuery(GET_CHARACTER);
+  const { loading, error, data } = useQuery<GetEpisodesQuery>(GET_CHARACTER);
   if (error) {
     return <h1>Data is not available right now</h1>;
   }
@@ -23,7 +27,7 @@ const Episodes = () => {
           {data?.episodes?.results.map((episodeData) => (
             <EpisodeCard
               key={episodeData?.id}
-              episodeData={episodeData}
+              episodeData={episodeData as Episode}
             ></EpisodeCard>
           ))}
         </div>
