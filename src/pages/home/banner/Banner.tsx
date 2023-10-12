@@ -1,4 +1,3 @@
-"../../../../public/banner.jpg";
 const Banner = () => {
   return (
     <section>

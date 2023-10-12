@@ -27,7 +27,7 @@ const Episodes = () => {
       )}
       {data?.episodes?.results && (
         <div className="grid gap-7 grid-cols-1 md:grid-cols-4">
-          {data?.episodes?.results.map((episodeData) => (
+          {data?.episodes?.results?.map((episodeData) => (
             <EpisodeCard
               key={episodeData?.id}
               episodeData={episodeData as Episode}

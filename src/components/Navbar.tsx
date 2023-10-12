@@ -10,8 +10,8 @@ const Navbar = () => {
     (state) => state.bookMarkSlice.episodes
   );
 
-  const [darkMood, setDarkMood] = useState(false);
-  const [menuBar, setMenuBar] = useState(false);
+  const [darkMood, setDarkMood] = useState<boolean>(false);
+  const [menuBar, setMenuBar] = useState<boolean>(false);
 
   if (darkMood) {
     document.documentElement.classList.add("dark");

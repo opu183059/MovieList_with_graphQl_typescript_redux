@@ -26,9 +26,11 @@ const EpisodeCard = ({ episodeData }: epidoeCardProps) => {
     status: "watchlist",
   };
   let storedWatchlist = [];
-  const ab = localStorage.getItem("Watchlist");
-  storedWatchlist = JSON.parse(ab!);
-  const available = storedWatchlist.find(
+
+  const storedDataFromLocal = localStorage.getItem("Watchlist");
+  storedWatchlist = JSON.parse(storedDataFromLocal!);
+
+  const available = storedWatchlist?.find(
     (episodeData: Episode) => episodeData.id == id
   );
 

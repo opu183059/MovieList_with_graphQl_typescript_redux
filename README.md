@@ -1,28 +1,50 @@
-# React + TypeScript + Vite
+# Type Script Practicing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Here in this project you can find all the ricky and Morty Episodes details and add them in your watch list and mark them as watched
 
-Currently, two official plugins are available:
+## project Live link 🔗:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://rick-and-morty-byopu.netlify.app/
 
-## Expanding the ESLint configuration
+- My Information
+  Name: `Akther uz zaman`
+  Email: `opuctg440@gmail.com`
+  Portfolio: `aktheruzzaman.netlify.app`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- React
+- React Redux
+- React Router Dom
+- React Icons
+- Typescript
+- Tailwind CSS
+- GraphQL Apolo client
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+## Getting Started
+
+To get started with this project, follow these steps:
+
+1. Clone the repository to your local machine using
+
+```bash
+git clone https://github.com/opu183059/MovieList_with_graphQl_typescript_redux.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# MovieList_with_graphQl_typescript_redux
+2. Navigate to the project directory by
+
+```bash
+cd MovieList_with_graphQl_typescript_redux
+```
+
+3. Install dependencies using
+
+```bash
+npm install
+```
+
+4. Start the development server using
+
+```bash
+npm run dev
+```

@@ -13,13 +13,12 @@ import { singleWatchList } from "../../../interface/interface";
 interface episodeList {
     episodes: singleWatchList[]
 }
-
 let episodesList = [];
 const stored = localStorage.getItem("Watchlist");
 const storedWatchlist = JSON.parse(stored!)
 // const storedWatchlist = JSON.parse(localStorage.getItem("Watchlist"));
 
-if (storedWatchlist) {
+if (stored) {
     episodesList = storedWatchlist
 }
 const initialState: episodeList = {
@@ -49,7 +48,7 @@ export const BookMarkSlice = createSlice({
         },
         changeEpisodeStatus: (state, action) => {
             const { id, status } = action.payload;
-            const episodeToChange = state.episodes.find(episode => episode.id === id);
+            const episodeToChange = state.episodes?.find(episode => episode.id === id);
             if (episodeToChange) {
                 episodeToChange.status = status;
             }
