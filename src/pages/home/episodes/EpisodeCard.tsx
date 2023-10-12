@@ -65,7 +65,7 @@ const EpisodeCard = ({ episodeData }: epidoeCardProps) => {
         </div>
         <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
           <div className="flex min-h-full flex-col items-center justify-center">
-            <h1 className="text-xl font-bold opacity-30 mb-1">{episode}</h1>
+            <h1 className="text-lg font-bold opacity-30 mb-1">{episode}</h1>
             <p className="text-2xl mb-4 font-semibold ">{name}</p>
             <p>Released: {air_date}</p>
             <p>Characters: {characters.length}</p>

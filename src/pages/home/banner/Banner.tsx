@@ -50,7 +50,7 @@ const Banner = () => {
             </p>
             <a
               href="#episodes"
-              className="border-[1px] border-[#5d2a1d] dark:border-[#a97c71] dark:text-[#a97c71] text-[#5d2a1d] hover:bg-[#5d2a1d] hover:text-[#f5d9d2] dark:hover:text-[#f0c7be] duration-200 rounded px-3 py-2"
+              className="border-[1px] border-[#5d2a1d] dark:border-[#f3b2a2] dark:text-[#000000] text-[#5d2a1d] hover:bg-[#5d2a1d] dark:hover:bg-transparent dark:bg-[#dc9988] hover:text-[#f5d9d2] dark:hover:text-[#dca092] duration-200 rounded px-3 py-2"
             >
               Explore now
             </a>
