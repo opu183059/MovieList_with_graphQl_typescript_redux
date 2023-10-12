@@ -14,9 +14,9 @@ const WatchList = () => {
   );
 
   // console.log(BookMarkedData);
-  const wathlistArray = [];
-  const watchingArray = [];
-  const watchedArray = [];
+  const wathlistArray: singleWatchList[] = [];
+  const watchingArray: singleWatchList[] = [];
+  const watchedArray: singleWatchList[] = [];
 
   BookMarkedData.filter((data) => {
     if (data.status == "watchlist") {

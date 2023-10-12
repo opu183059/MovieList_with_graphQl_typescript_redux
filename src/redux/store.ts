@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import BookMarkSlice from './features/slices/BookMarkSlice'
+import BookMarkSlice from './features/slices/ManageWatchSlice'
 // ...
 
 export const store = configureStore({

@@ -2,7 +2,7 @@ import { FaArrowRight, FaCheck } from "react-icons/fa";
 import {
   changeEpisodeStatus,
   removeBookmark,
-} from "../../redux/features/slices/BookMarkSlice";
+} from "../../redux/features/slices/ManageWatchSlice";
 import { useAppDispatch } from "../../redux/hooks";
 import toast from "react-hot-toast";
 import { BsFillTrash3Fill } from "react-icons/bs";
@@ -36,13 +36,12 @@ const WatchListRowCard = ({ item }: watchListRowCardProps) => {
           : item.status == "watching"
           ? "bg-blue-100 border-blue-900"
           : "bg-green-100 border-green-900"
-      } my-2 p-4 border-[1px] rounded-md flex items-center justify-between h-24`}
+      } my-2 p-4 border-[1px] rounded-md flex items-center justify-between h-24 dark:text-[#351c16]`}
     >
       <div>
         <h1>{item.episode}</h1>
         <p>Name: {item.name}</p>
         <p>Characters: {item.characters.length}</p>
-        {/* <p>Name: {item.characters.length}</p> */}
       </div>
       <div className="flex gap-1 flex-col justify-center text-xs ">
         {item.status == "watchlist" ? (

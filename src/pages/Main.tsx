@@ -9,7 +9,11 @@ const Main = () => {
       <Navbar />
       <Outlet />
       <Footer />
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        containerStyle={{ top: "50px" }}
+      />
     </>
   );
 };

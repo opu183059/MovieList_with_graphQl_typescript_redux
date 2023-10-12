@@ -13,8 +13,11 @@ const Episodes = () => {
     return <h1>Data is not available right now</h1>;
   }
   return (
-    <section className="pt-20 min-h-screen max-w-6xl mx-auto px-5">
-      <h2 className="mb-10 font-poppins font-semibold text-[#5d2a1d] text-xl md:text-3xl text-center">
+    <section
+      id="episodes"
+      className="pt-20 min-h-screen max-w-6xl mx-auto px-5"
+    >
+      <h2 className="mb-8 font-poppins font-semibold text-[#5d2a1d] dark:text-[#a97c71] text-xl md:text-2xl text-center">
         All the episodes are here
       </h2>
       {loading && (

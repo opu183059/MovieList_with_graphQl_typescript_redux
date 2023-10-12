@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import {
   addBookmark,
   removeBookmark,
-} from "../../../redux/features/slices/BookMarkSlice";
+} from "../../../redux/features/slices/ManageWatchSlice";
 import { useAppDispatch } from "../../../redux/hooks";
 import { useEffect, useState } from "react";
 import { Episode } from "../../../graphQl/__generated__/graphql";
@@ -39,26 +39,27 @@ const EpisodeCard = ({ episodeData }: epidoeCardProps) => {
   const add = () => {
     if (!available) {
       dispatch(addBookmark(EpisodeInformation));
-      toast.success("Added in the Watchlist");
+      toast.success(`${episode} Added in the Watchlist`);
       setBookMark(false);
     } else {
       dispatch(removeBookmark(id));
-      toast.error("Removed From Watchlist");
+      toast.error(`${episode} Removed From Watchlist`);
       setBookMark(true);
     }
     setBookMark(!bookMark);
   };
   return (
     <div className="group h-96 [perspective:1000px]">
-      <div className="relative h-full w-full rounded-xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+      <div className="relative h-full w-full rounded-xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] dark:border-[#d9a79a] border-[#d9a79a] border-[1px]">
         <div className="absolute inset-0">
           <img
-            className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/20"
+            className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/20 
+            dark:shadow-[#d9a79a]/20"
             src={image!}
             alt={name + "image"}
           />
-          <div className="absolute bottom-0 rounded-b-xl group-hover:hidden w-full bg-white/90 font-bold text-center py-2 duration-500">
-            <h5 className=" text-xl">{episode}</h5>
+          <div className="absolute bottom-0 rounded-b-xl group-hover:hidden dark:text-[#d9a79a] w-full bg-white/90 dark:bg-black/80 font-bold text-center py-2 duration-500">
+            <h5 className="text-xl">{episode}</h5>
             <h5>{name}</h5>
           </div>
         </div>

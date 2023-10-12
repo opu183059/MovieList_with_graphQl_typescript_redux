@@ -3,3 +3,16 @@
 @tailwind utilities;
 
 /* color code:  C4A098 A3847E */
+
+html {
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 0.5vw;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #9b4f3b;
+}
+html::-webkit-scrollbar-track {
+  background-color: transparent;
+}

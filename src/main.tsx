@@ -9,7 +9,7 @@ import About from "./pages/about/About";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
-import WatchList from "./pages/cart/WatchList";
+import WatchList from "./pages/watchlist/WatchList";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 
 const client = new ApolloClient({
